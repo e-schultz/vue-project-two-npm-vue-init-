@@ -1,21 +1,30 @@
 <script setup>
+import { ref } from "vue";
 import { ExclamationCircleIcon } from "@heroicons/vue/solid";
-
+import BaseInput from "./BaseInput.vue";
+import UserName from "./UserName.vue";
 const props = defineProps({
   message: String,
 });
+
+const value = ref("test value");
+const firstName = ref("Evan");
+const lastName = ref("Schulltz");
 </script>
 <template>
   <div>
-    <h1>{{ message }}</h1>
+    <!--  <h1>{{ message }}</h1>
     <label class="block">
       <span class="text-gray-700">Full name</span>
-      <input type="text" class="mt-1 block w-full" placeholder="" />
+      <input type="text" xclass="mt-1 block w-full" placeholder="" />
     </label>
     <label class="block">
       <span class="text-gray-700">Input (date)</span>
-      <input type="date" class="form-input mt-1 block w-full" />
-    </label>
+      <input type="date" xclass="form-input mt-1 block w-full" />
+    </label>-->
+    <BaseInput v-model="value" />
+    <UserName v-model:first-name="firstName" v-model:last-name="lastName" /> -
+    {{ firstName }} - {{ lastName }}
   </div>
   <!--<div>
     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
