@@ -21,6 +21,9 @@ export default {
     return {
       formData: {
         firstName: "Evan",
+        userName: {
+          lastName: "",
+        },
       },
       schema: [
         {
@@ -34,7 +37,7 @@ export default {
           fieldType: "TextInput",
           placeholder: "First Name",
           label: "First Name",
-          name: "firstName",
+          name: "xfirstName",
         },
         {
           fieldType: "TextInput",
@@ -52,7 +55,9 @@ export default {
         {
           fieldType: "UserName",
           placeholder: "test",
-          name: "test",
+          firstName: "testy",
+          lastName: "heyo",
+          name: "userName",
           label: "test",
         },
       ],

@@ -11,7 +11,6 @@
       :modelValue="formData[field.name]"
       @update:modelValue="updateForm(field.name, $event)"
       v-bind="field"
-      @update="updateForm"
     >
     </component>
     <!--
@@ -35,6 +34,9 @@ export default {
     };
   },
   methods: {
+    test(x, y, z) {
+      console.log("test", x.target.value, y, z);
+    },
     updateForm(fieldName, value) {
       console.log(fieldName, value);
       // this.$set(this.formData, fieldName, value);
