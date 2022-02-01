@@ -6,7 +6,7 @@ import UserName from "./UserName.vue";
 const props = defineProps({
   message: String,
 });
-
+const log = (e) => console.log(e);
 const value = ref("test value");
 const firstName = ref("Evan");
 const lastName = ref("Schulltz");
@@ -14,7 +14,11 @@ const lastName = ref("Schulltz");
 <template>
   <div>
     <BaseInput v-model="value" />
-    <UserName v-model:first-name="firstName" v-model:last-name="lastName" />
+    <UserName
+      v-model:first-name="firstName"
+      v-model:last-name="lastName"
+      @update:modelValue:x="log($event)"
+    />
   </div>
 </template>
 <style scoped>

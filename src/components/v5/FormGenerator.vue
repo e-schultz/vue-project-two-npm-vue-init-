@@ -10,6 +10,7 @@
       :is="field.fieldType"
       :modelValue="formData[field.name]"
       @update:modelValue="updateForm(field.name, $event)"
+      @input="test($event, field.name)"
       v-bind="field"
     >
     </component>
@@ -20,6 +21,10 @@
 </template>
 
 <script>
+// recursive tree
+// handle children properly
+// also thinking about - more than just forms, some things don't need models to update/etc
+// alternativley, could UserName also make use of the dynamic forms 
 import NumberInput from "./NumberInput.vue";
 import SelectList from "./SelectList.vue";
 import TextInput from "./TextInput.vue";

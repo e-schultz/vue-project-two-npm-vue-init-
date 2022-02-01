@@ -18,7 +18,7 @@ export default {
     :name="name"
     :placeholder="placeholder"
     :modelValue="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="$emit('update:modelValue:a:b:c', $event.target.value)"
   />
 
   <!--    <input
