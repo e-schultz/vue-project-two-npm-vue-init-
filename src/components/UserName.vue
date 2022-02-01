@@ -7,7 +7,7 @@ defineProps({
 });
 
 let emit = defineEmits(["update:firstName", "update:lastName"]);
-let doStuff = (e, x, y, z) => {
+/*let doStuff = (e, x, y, z) => {
   console.log("doStuff", e, x, y, z);
   emit("update:lastName", e);
 };
@@ -16,12 +16,14 @@ let doStuffx = (e, x, y, z) => {
   emit("update:firstName", e);
 };
 let test = (event, value) => {
+  console.log("what", event.target.value, value);
   emit(`update:${value}`, event.target.value);
-};
+};*/
 </script>
 
 <template>
-  {{ $attrs }}
-  <BaseInput type="text" v-model="firstName" @input="(e) => test(e, 'firstName')" />
-  <BaseInput type="text" v-model="lastName" @update:modelValue="doStuff" />
+  <div>
+    <BaseInput type="text" v-model="firstName" />
+    <BaseInput type="text" v-model="lastName" />
+  </div>
 </template>

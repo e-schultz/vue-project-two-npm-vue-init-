@@ -49,6 +49,12 @@ export default {
           label: "Age",
           minValue: 0,
         },
+        {
+          fieldType: "UserName",
+          placeholder: "test",
+          name: "test",
+          label: "test",
+        },
       ],
     };
   },
