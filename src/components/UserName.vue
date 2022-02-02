@@ -1,5 +1,8 @@
 <script setup>
 import BaseInput from "./BaseInput.vue";
+import { useAttrs } from "vue";
+const attrs = useAttrs();
+console.log(attrs);
 let x = "firstName";
 defineProps({
   firstName: String,
@@ -10,7 +13,7 @@ let emit = defineEmits([
   "update:firstName",
   "update:lastName",
   "update:modelValue",
-  "update:modelValue:x",
+  "input",
 ]);
 /*let doStuff = (e, x, y, z) => {
   console.log("doStuff", e, x, y, z);
@@ -30,13 +33,15 @@ let test = (event, value) => {
   <div>
     <BaseInput
       type="text"
+      label="First Name"
       v-model="firstName"
-      @input="$emit('update:modelValue:x', { firstName: $event.target.value, lastName })"
+      @input="$emit('update:modelValue', { firstName: $event.target.value, lastName })"
     />
     <BaseInput
+      label="Last Name"
       type="text"
       v-model="lastName"
-      @input="$emit('update:modelValue:y', { firstName, lastName: $event.target.value })"
+      @input="$emit('update:modelValue', { firstName, lastName: $event.target.value })"
     />
   </div>
 </template>

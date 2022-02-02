@@ -30,21 +30,7 @@
             aria-hidden="true"
           />
           <div class="relative flex items-start space-x-3">
-            <template v-if="activityItem.type === 'comment'">
-              <ActivityComment :activityItem="activityItem" />
-            </template>
-            <template
-              v-else-if="activityItem.type === 'assignment'"
-              condition="activityItem.type === 'assignment'"
-            >
-              <ActivityAssignment :activityItem="activityItem" />
-            </template>
-            <template
-              v-else-if="activityItem.type === 'tags'"
-              condition="activityItem.type === 'tags'"
-            >
-              <ActivityTags :activityItem="activityItem" />
-            </template>
+            <component :is="getType(activityItem.type)" :activityItem="activityItem" />
           </div>
         </div>
       </li>
@@ -105,6 +91,20 @@ export default {
     ActivityComment,
     ActivityAssignment,
     ActivityTags,
+  },
+  methods: {
+    getType: function (t) {
+      switch (t) {
+        case "comment":
+          return "ActivityComment";
+
+        case "assignment":
+          return "ActivityAssignment";
+
+        case "tags":
+          return "ActivityTags";
+      }
+    },
   },
   setup() {
     return {

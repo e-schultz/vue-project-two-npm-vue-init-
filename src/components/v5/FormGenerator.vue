@@ -3,7 +3,7 @@
     https://staging.vuejs.org/guide/components/events.html#usage-with-v-model
     -->
   <div>
-    {{ formData }}
+    {{ formData }} - {{ counter }}
     <component
       v-for="(field, index) in schema"
       :key="index"
@@ -24,11 +24,12 @@
 // recursive tree
 // handle children properly
 // also thinking about - more than just forms, some things don't need models to update/etc
-// alternativley, could UserName also make use of the dynamic forms 
+// alternativley, could UserName also make use of the dynamic forms
 import NumberInput from "./NumberInput.vue";
 import SelectList from "./SelectList.vue";
 import TextInput from "./TextInput.vue";
 import UserName from "../UserName.vue";
+import { ref } from "vue";
 export default {
   name: "FormGenerator",
   components: { NumberInput, SelectList, TextInput, UserName },
@@ -36,6 +37,13 @@ export default {
   data() {
     return {
       formData: this.modelValue || {},
+      counter: 5,
+    };
+  },
+  setup() {
+    const counter = ref(0);
+    return {
+      counter,
     };
   },
   methods: {
@@ -43,7 +51,7 @@ export default {
       console.log("test", x.target.value, y, z);
     },
     updateForm(fieldName, value) {
-      console.log(fieldName, value);
+      console.log("updateForm", fieldName, value);
       // this.$set(this.formData, fieldName, value);
       this.formData[fieldName] = value;
       //this.$emit("input", this.formData);

@@ -5,8 +5,9 @@
     <form-generator :schema="schema" v-model="formData"> </form-generator>
 
     <p>
-      Hello {{ formData.title }} {{ formData.firstName }} {{ formData.lastName }}, I hear
-      you are {{ formData.age }} years old.
+      Hello {{ formData.title }} {{ formData.user.firstName }}
+      {{ formData.user.lastName }}, I hear you are {{ formData.age }} years old.
+      {{ formData.email }}
     </p>
   </div>
 </template>
@@ -20,8 +21,9 @@ export default {
   data() {
     return {
       formData: {
-        firstName: "Evan",
-        userName: {
+        email: "evan@demo.io",
+        user: {
+          firstName: "",
           lastName: "",
         },
       },
@@ -35,15 +37,9 @@ export default {
         },
         {
           fieldType: "TextInput",
-          placeholder: "First Name",
-          label: "First Name",
-          name: "xfirstName",
-        },
-        {
-          fieldType: "TextInput",
-          placeholder: "Last Name",
-          label: "Last Name",
-          name: "lastName",
+          placeholder: "email",
+          label: "Email",
+          name: "email",
         },
         {
           fieldType: "NumberInput",
@@ -57,8 +53,7 @@ export default {
           placeholder: "test",
           firstName: "testy",
           lastName: "heyo",
-          name: "userName",
-          label: "test",
+          name: "user",
         },
       ],
     };

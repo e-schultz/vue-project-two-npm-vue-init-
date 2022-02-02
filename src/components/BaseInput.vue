@@ -5,7 +5,7 @@ const emits = defineEmits(["update:modelValue"]);
 <template>
   <label class="block">
     <!-- {{ $attrs }} - {{ $props }} -->
-    <span class="text-gray-700">x{{ label }}</span>
+    <span class="text-gray-700">{{ label }}</span>
     <input
       v-bind="$attrs"
       :placeholder="label"
