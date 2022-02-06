@@ -25,6 +25,21 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/DynamicFive.vue"),
     },
+    {
+      path: "/step1",
+      name: "step1",
+      component: () => import("../views/StepOne.vue"),
+    },
+    {
+      path: "/step2",
+      name: "step2",
+      component: () => import("../views/StepTwo.vue"),
+    },
+    {
+      path: "/step3",
+      name: "step3",
+      component: () => import("../views/StepThree.vue"),
+    },
   ],
 });
 

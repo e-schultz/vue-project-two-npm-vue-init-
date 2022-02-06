@@ -1,10 +1,14 @@
 <script setup>
 const props = defineProps(["label", "modelValue", "placeholder"]);
 const emits = defineEmits(["update:modelValue"]);
+let blocks = [
+  {
+    blockType: "input",
+  },
+];
 </script>
 <template>
   <label class="block">
-    <!-- {{ $attrs }} - {{ $props }} -->
     <span class="text-gray-700">{{ label }}</span>
     <input
       v-bind="$attrs"

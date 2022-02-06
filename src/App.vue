@@ -16,11 +16,14 @@ import HelloWorld from "@/components/HelloWorld.vue";
         />
 
         <div class="wrapper">
-          <HelloWorld msg="You did it!" />
+          <HelloWorld msg="Vue Dynamic Components Workshop" />
 
           <nav>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
+            <RouterLink to="/step1">step1</RouterLink>
+            <RouterLink to="/step2">step2</RouterLink>
+            <RouterLink to="/step3">step3</RouterLink>
           </nav>
         </div>
       </header>

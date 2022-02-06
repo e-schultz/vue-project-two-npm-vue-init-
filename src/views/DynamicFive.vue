@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import FormGenerator from "../components/v5/FormGenerator.vue";
+import FormGenerator from "@/components/v5/FormGenerator.vue";
 
 export default {
   name: "GeneratorDemo",
