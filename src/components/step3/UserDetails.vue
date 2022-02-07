@@ -1,3 +1,11 @@
+<!-- 
+at this point - we are starting to need to copy-paste some code
+any time we want to have a dynamic form 
+
+we can start to refactor this out into a `useDynamicForm` 
+-- start of composables
+
+-->
 <script setup>
 import { reactive } from "vue";
 import TextInput from "@/components/step2/TextInput.vue";

@@ -28,17 +28,22 @@ const router = createRouter({
     {
       path: "/step1",
       name: "step1",
-      component: () => import("../views/StepOne.vue"),
+      component: () => import("../components/step1/StepOne.vue"),
     },
     {
       path: "/step2",
       name: "step2",
-      component: () => import("../views/StepTwo.vue"),
+      component: () => import("../components/step2/StepTwo.vue"),
     },
     {
       path: "/step3",
       name: "step3",
-      component: () => import("../views/StepThree.vue"),
+      component: () => import("../components/step3/StepThree.vue"),
+    },
+    {
+      path: "/ws-0",
+      name: "ws0",
+      component: () => import("../components/ws-0/ws-0.vue"),
     },
   ],
 });

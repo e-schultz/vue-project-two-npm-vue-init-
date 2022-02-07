@@ -15,6 +15,14 @@ let componentMap = {
   BulletList,
   UserDetails,
 };
+// seperate out schema from initial values
+// use of MarkRaw? tbd
+// if I had just used block: UserDetails - vue would throw
+// a warning about component marked as reactive
+// instead of modelValue as the prop - modelName: value - ?
+// or model: 'prop'
+// for handling nesting / etc
+// [{},{},[{},{}]]
 let simpleForm = reactive([
   {
     block: "UserDetails",

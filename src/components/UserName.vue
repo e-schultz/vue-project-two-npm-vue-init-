@@ -15,18 +15,6 @@ let emit = defineEmits([
   "update:modelValue",
   "input",
 ]);
-/*let doStuff = (e, x, y, z) => {
-  console.log("doStuff", e, x, y, z);
-  emit("update:lastName", e);
-};
-let doStuffx = (e, x, y, z) => {
-  console.log(e, x, y, z);
-  emit("update:firstName", e);
-};
-let test = (event, value) => {
-  console.log("what", event.target.value, value);
-  emit(`update:${value}`, event.target.value);
-};*/
 </script>
 
 <template>

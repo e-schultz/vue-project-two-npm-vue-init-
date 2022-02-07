@@ -3,8 +3,8 @@ https://stackoverflow.com/questions/64820762/vue-define-event-handlers-in-array-
 -->
 <script setup>
 import { ref, reactive } from "vue";
-import DynamicOne from "../components/step1/DynamicOne.vue";
-import DynamicTwo from "../components/step1/DynamicTwo.vue";
+import DynamicOne from "@/components/step1/DynamicOne.vue";
+import DynamicTwo from "@/components/step1/DynamicTwo.vue";
 
 const components = {
   DynamicOne,
