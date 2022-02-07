@@ -3,11 +3,12 @@ import { reactive, ref } from "vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
 import FormField from "./FormField.vue";
+import CheckBox from "./CheckBox.vue";
 
 const props = defineProps(["schema"]);
 const emits = defineEmits(["update:modelValue", "update:formValue"]);
 
-const components = { TextField, SelectList };
+const components = { TextField, SelectList, CheckBox };
 const formData = ref({});
 function removeField(fieldName) {
   delete formData.value[fieldName];
@@ -22,14 +23,6 @@ function removeField(fieldName) {
         :formData="formData"
         @delete:formModel="removeField"
       />
-      <!--  <component
-        :is="components[field.component]"
-        v-model="formData[field.model]"
-        @update:modelValue="$emit('update:formValue', field.model, $event)"
-        v-bind="field.props"
-        v-if="schemaCondition(field)"
-      />-->
-    </template>
-    {{ formData }}
+     
   </div>
 </template>

@@ -3,13 +3,11 @@ import { reactive, ref } from "vue";
 import FormGen from "./FormGen.vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
+import CheckBox from "./CheckBox.vue";
+
 const formData = ref({});
-function clearFields() {
-  let { firstName, lastName, usingFor, ...rest } = formData.value;
-  console.log(firstName);
-  formData.value = { firstName, lastName, usingFor };
-}
-let components = { TextField, SelectList };
+const components = { TextField, SelectList, CheckBox };
+
 const schema = [
   {
     component: "TextField",
@@ -50,6 +48,13 @@ const schema = [
       options: ["Industry 1", "Industry 2", "Industry 3", "Other"],
     },
     condition: (e) => e.usingFor === "Work",
+  },
+  {
+    component: "CheckBox",
+    model: "hasVueExpierience",
+    props: {
+      label: "Have you used Vue before?",
+    },
   },
 ];
 let handleUpdate = (field, value) => {

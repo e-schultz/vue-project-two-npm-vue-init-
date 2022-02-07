@@ -2,9 +2,11 @@
 import { reactive, ref, computed, isRef } from "vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
+import CheckBox from "./CheckBox.vue";
+
 const props = defineProps(["field", "formData"]);
 const emit = defineEmits(["update:modelValue", "update:formValue", "delete:formModel"]);
-const components = { TextField, SelectList };
+const components = { TextField, SelectList, CheckBox };
 
 const schemaCondition = computed(() => {
   const condition = props.field.condition;
