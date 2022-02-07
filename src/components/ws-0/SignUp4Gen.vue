@@ -32,8 +32,15 @@ const schema = [
   },
   {
     component: "TextField",
+    model: "companyName",
+    props: { label: "Company Name" },
+    condition: (e) => e.usingFor === "Work",
+  },
+  {
+    component: "TextField",
     model: "email",
     props: { label: "Email", placeholder: "work email" },
+    condition: (e) => e.usingFor === "Work",
   },
   {
     component: "SelectList",
@@ -42,6 +49,7 @@ const schema = [
       label: "Industry",
       options: ["Industry 1", "Industry 2", "Industry 3", "Other"],
     },
+    condition: (e) => e.usingFor === "Work",
   },
 ];
 let handleUpdate = (field, value) => {
