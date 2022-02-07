@@ -23,6 +23,6 @@ function removeField(fieldName) {
         :formData="formData"
         @delete:formModel="removeField"
       />
-     
+    </template>
   </div>
 </template>

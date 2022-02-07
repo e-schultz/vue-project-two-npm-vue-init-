@@ -1,0 +1,77 @@
+<script setup>
+import { ref } from "vue";
+import TextField from "./TextField.vue";
+import SignUp1 from "./SignUp1.vue";
+import SignUp2 from "./SignUp2.vue";
+import SignUp3 from "./SignUp3.vue";
+import SignUp4 from "./SignUp4.vue";
+import SignUp4Gen from "./SignUp4Gen.vue";
+
+// this is feeling closer to the 2nd or 3rd step --- not the first
+// thats ok for now
+let formData = ref({});
+let schema = [
+  {
+    component: TextField,
+    model: "firstName",
+    props: {
+      placeholder: "Enter First Name",
+      label: "First Name",
+    },
+  },
+  {
+    component: "TextField",
+    model: "lastName",
+    props: {
+      placeholder: "Enter Last Name",
+      label: "Last Name",
+    },
+  },
+];
+function update(model, value) {
+  console.log("updating", { model, value });
+  formData.value[model] = value;
+}
+</script>
+<template>
+  <div>
+    <h1>Welcome - Intro</h1>
+    <component
+      v-for="row in schema"
+      :is="row.component"
+      v-bind="row.props"
+      :modelValue="formData[row.model]"
+      @update:modelValue="update(row.model, $event)"
+    />
+
+    <h2>Output</h2>
+    <ul>
+      <li>First Name: {{ formData.firstName }}</li>
+      <li>Last Name: {{ formData.lastName }}</li>
+    </ul>
+
+    <!--<SignUp1 />
+    <hr />
+    <SignUp2 />
+    <hr />
+    <SignUp3 />-->
+    <!--<SignUp4 />-->
+    <SignUp4Gen />
+    <!-- <TextField
+      v-model="formData.firstName"
+      label="First Name"
+      placeholder="Please Enter Your First Name"
+    />
+    <TextField
+      v-model="formData.lastName"
+      label="Last Name"
+      placeholder="Please Enter
+    Your Last Name"
+    />-->
+  </div>
+</template>
+
+<!--
+speaker notes - rough draft
+
+-->

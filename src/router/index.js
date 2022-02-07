@@ -45,6 +45,11 @@ const router = createRouter({
       name: "ws0",
       component: () => import("../components/ws-0/ws-0.vue"),
     },
+    {
+      path: "/ws-1",
+      name: "ws1",
+      component: () => import("../components/ws-1/ws-1.vue"),
+    },
   ],
 });
 
