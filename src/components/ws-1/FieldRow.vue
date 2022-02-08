@@ -7,7 +7,7 @@ const props = defineProps(["schema", "row"]);
 //console.log({ parsedSchema });
 </script>
 <template>
-  <div class="schema-row">
+  <div class="schema-rowcd">
     <FormField
       v-for="field in row"
       :field="field"

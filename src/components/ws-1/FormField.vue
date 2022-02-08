@@ -1,3 +1,8 @@
+<!-- idea 
+- when a compoent loads - it makes an API call to get it's own schema 
+  - doing this nested?
+  
+-->
 <script setup>
 import { reactive, ref, computed, isRef, inject, watch } from "vue";
 import { FORM_MODEL } from "./constants.js";
