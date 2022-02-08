@@ -1,10 +1,9 @@
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
 import RadioGroup from "./RadioGroup.vue";
 const formData = reactive({});
-
 function handleSubmit(x, y) {
   console.log("submit", { x, y });
   console.log(x.target.value);
@@ -15,17 +14,19 @@ function handleSubmit(x, y) {
     <form @submit.prevent="handleSubmit($event)">
       <fieldset>
         <legend>Signup Details</legend>
-        <TextField
-          v-model="formData.firstName"
-          label="First Name"
-          placeholder="Please Enter Your First Name"
-        />
-        <TextField
-          v-model="formData.lastName"
-          label="Last Name"
-          placeholder="Please Enter
+        <div class="flex">
+          <TextField
+            v-model="formData.firstName"
+            label="First Name"
+            placeholder="Please Enter Your First Name"
+          />
+          <TextField
+            v-model="formData.lastName"
+            label="Last Name"
+            placeholder="Please Enter
     Your Last Name"
-        />
+          />
+        </div>
         <TextField label="Job Title" v-model="formData.jobTitle" />
         <RadioGroup
           label="Vue Expierience?"

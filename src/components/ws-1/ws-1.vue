@@ -51,7 +51,10 @@ function update(model, value) {
       <li>Last Name: {{ formData.lastName }}</li>
     </ul>
 
-    <SignUp4Gen />
+    <!--   <SignUp1 />-->
+    <SignUp1Gen />
+
+    <!--<SignUp4Gen />-->
     <!--<SignUp1Gen />-->
   </div>
 </template>

@@ -2,5 +2,5 @@
 const message = "hi";
 </script>
 <template>
-  <div>{{ messag }}}</div>
+  <div>{{ messag }}</div>
 </template>
