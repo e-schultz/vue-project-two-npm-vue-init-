@@ -1,11 +1,13 @@
 <script setup>
 import { reactive, ref } from "vue";
+import useDynamicForm from "./useDynamicForm.js";
 import FormGen from "./FormGen.vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
 import CheckBox from "./CheckBox.vue";
 
 const formData = ref({});
+useDynamicForm(formData);
 const components = { TextField, SelectList, CheckBox };
 
 const schema = [

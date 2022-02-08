@@ -1,8 +1,8 @@
 <script setup>
-import { reactive } from "vue";
+import { ref } from "vue";
 import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
-const formData = reactive({});
+const formData = ref({});
 </script>
 <template>
   <div>

@@ -6,6 +6,7 @@ import SignUp2 from "./SignUp2.vue";
 import SignUp3 from "./SignUp3.vue";
 import SignUp4 from "./SignUp4.vue";
 import SignUp4Gen from "./SignUp4Gen.vue";
+import SignUp1Gen from "./SignUp1Gen.vue";
 
 // this is feeling closer to the 2nd or 3rd step --- not the first
 // thats ok for now
@@ -50,24 +51,8 @@ function update(model, value) {
       <li>Last Name: {{ formData.lastName }}</li>
     </ul>
 
-    <!--<SignUp1 />
-    <hr />
-    <SignUp2 />
-    <hr />
-    <SignUp3 />-->
-    <!--<SignUp4 />-->
     <SignUp4Gen />
-    <!-- <TextField
-      v-model="formData.firstName"
-      label="First Name"
-      placeholder="Please Enter Your First Name"
-    />
-    <TextField
-      v-model="formData.lastName"
-      label="Last Name"
-      placeholder="Please Enter
-    Your Last Name"
-    />-->
+    <!--<SignUp1Gen />-->
   </div>
 </template>
 

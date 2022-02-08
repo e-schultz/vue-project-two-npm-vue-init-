@@ -1,21 +1,42 @@
 <script setup>
 import { reactive, ref } from "vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-import RadioGroup from "./RadioGroup.vue";
-const formData = reactive({});
+import useDynamicForm from "./useDynamicForm.js";
+import FormGen from "./FormGen.vue";
 
+const formData = ref({});
+useDynamicForm(formData);
 function handleSubmit(x, y) {
   console.log("submit", { x, y });
   console.log(x.target.value);
 }
+const createTextField = (model, label, placeholder = label) => ({
+  component: "TextField",
+  model,
+  props: { label, placeholder },
+});
+const createRadioGroup = (model, label, options, placeholder = label) => ({
+  component: "RadioGroup",
+  model,
+  props: {
+    options,
+    label,
+    placeholder,
+  },
+});
+const SCHEMA = [
+  [createTextField("firstName", "First Name"), createTextField("lastName", "Last Name")],
+  createTextField("jobTitle", "Job Title"),
+  createRadioGroup("hasVue", "Has Vue", ["yes", "no"]),
+];
 </script>
 <template>
   <div>
+    {{ formData }}
     <form @submit.prevent="handleSubmit($event)">
       <fieldset>
         <legend>Signup Details</legend>
-        <TextField
+        <FormGen :schema="SCHEMA" />
+        <!-- <TextField
           v-model="formData.firstName"
           label="First Name"
           placeholder="Please Enter Your First Name"
@@ -31,10 +52,10 @@ function handleSubmit(x, y) {
           label="Vue Expierience?"
           :options="['yes', 'no']"
           v-model="formData.hasVue"
-        />
+        />-->
+
         <button type="submit">Go!</button>
       </fieldset>
     </form>
-    {{ formData }}
   </div>
 </template>
