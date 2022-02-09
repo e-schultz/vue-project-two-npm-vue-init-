@@ -7,10 +7,13 @@ import SignUp3 from "./SignUp3.vue";
 import SignUp4 from "./SignUp4.vue";
 import SignUp4Gen from "./SignUp4Gen.vue";
 import SignUp1Gen from "./SignUp1Gen.vue";
+import UserAddress from "./UserAddress.vue";
 
 // this is feeling closer to the 2nd or 3rd step --- not the first
 // thats ok for now
-let formData = ref({});
+let formData = ref({
+  userAddress: {},
+});
 let schema = [
   {
     component: TextField,
@@ -54,6 +57,10 @@ function update(model, value) {
     <!--   <SignUp1 />-->
     <SignUp1Gen />
 
+    <div>
+      <UserAddress v-model="formData.userAddress" />
+      {{ formData }}
+    </div>
     <!--<SignUp4Gen />-->
     <!--<SignUp1Gen />-->
   </div>

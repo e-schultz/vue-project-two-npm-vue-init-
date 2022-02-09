@@ -23,12 +23,14 @@ import TextField from "./TextField.vue";
 import SelectList from "./SelectList.vue";
 import CheckBox from "./CheckBox.vue";
 import RadioGroup from "./RadioGroup.vue";
+import UserAddress from "./UserAddress.vue";
 
 const componentMap = {
   TextField,
   SelectList,
   CheckBox,
   RadioGroup,
+  UserAddress,
 };
 const formData = ref({});
 useDynamicForm(formData);
@@ -55,6 +57,10 @@ const SCHEMA = [
   createTextField("lastName", "Last Name"),
   createTextField("jobTitle", "Job Title"),
   createRadioGroup("hasVue", "Has Vue", ["yes", "no"]),
+  {
+    component: "UserAddress",
+    model: "userAddress",
+  },
 ];
 </script>
 <template>

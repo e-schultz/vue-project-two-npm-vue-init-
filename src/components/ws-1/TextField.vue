@@ -1,12 +1,20 @@
 <script setup>
 defineProps(["modelValue", "name", "placeholder", "label"]);
 defineEmits(["update:modelValue"]);
+import BaseInput from "./BaseInput.vue";
 </script>
 <template>
-  <div>
+  <BaseInput
+    :label="label"
+    :modelValue="modelValue"
+    :name="name"
+    :placeholder="placeholder"
+    type="text"
+    @update:modelValue="$('update:modelValue', $event)"
+  />
+  <!--<div>
     <label
       >{{ label }}
-
       <input
         class="mt-1 block w-full"
         type="text"
@@ -16,5 +24,5 @@ defineEmits(["update:modelValue"]);
         :placeholder="placeholder"
       />
     </label>
-  </div>
+  </div>-->
 </template>

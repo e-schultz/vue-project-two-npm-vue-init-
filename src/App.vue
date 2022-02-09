@@ -1,5 +1,7 @@
 <script setup>
+import { onErrorCaptured } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import VErrorBoundary from "vue-error-boundary";
 import HelloWorld from "@/components/HelloWorld.vue";
 </script>
 
@@ -27,7 +29,6 @@ import HelloWorld from "@/components/HelloWorld.vue";
           </nav>
         </div>
       </header>
-
       <RouterView />
     </div>
   </div>
