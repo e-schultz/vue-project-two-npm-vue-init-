@@ -10,7 +10,7 @@ import BaseInput from "./BaseInput.vue";
     :name="name"
     :placeholder="placeholder"
     type="text"
-    @update:modelValue="$('update:modelValue', $event)"
+    @update:modelValue="$emit('update:modelValue', $event)"
   />
   <!--<div>
     <label

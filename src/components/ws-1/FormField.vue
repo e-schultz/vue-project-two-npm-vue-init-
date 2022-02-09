@@ -17,30 +17,20 @@ const components = { TextField, SelectList, CheckBox, RadioGroup };
 
 const formData = inject(FORM_MODEL);
 
-const schemaCondition = computed(
-  () => {
-    const condition = props.field.condition;
+const schemaCondition = computed(() => {
+  const condition = props.field.condition;
 
-    let result = true;
-    if (!condition) return true;
+  let result = true;
+  if (!condition) return true;
 
-    if (typeof condition === "function") {
-      result = condition(formData.value);
-    } else if (condition.modelEq) {
-      result = formData.value[condition.modelEq.model] === condition.modelEq.value;
-    }
-
-    return result;
-  },
-  {
-    onTrack(e) {
-      //console.log("track", e);
-    },
-    onTrigger(e) {
-      //console.log("trigger", e);
-    },
+  if (typeof condition === "function") {
+    result = condition(formData.value);
+  } else if (condition.modelEq) {
+    result = formData.value[condition.modelEq.model] === condition.modelEq.value;
   }
-);
+
+  return result;
+});
 watch(schemaCondition, (shouldDisplay) => {
   // since we are getting formData from the injection
   // can modify it down here
