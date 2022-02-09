@@ -11,6 +11,7 @@ function handleSubmit(x, y) {
 </script>
 <template>
   <div>
+    <h2>Signup 1</h2>
     <form @submit.prevent="handleSubmit($event)">
       <fieldset>
         <legend>Signup Details</legend>

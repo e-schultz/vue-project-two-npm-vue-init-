@@ -54,6 +54,11 @@ const router = createRouter({
       path: "/prop-1",
       name: "prop1",
       component: () => import("../components/prop-exp/PropExp.vue"),
+    },
+    {
+      path: "/livecode-1",
+      name: "livecode",
+      component: () => import("../components/live-code-1-1/LiveCodeOne.vue"),
     }
   ],
 });
